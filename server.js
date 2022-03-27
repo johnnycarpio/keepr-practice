@@ -1,5 +1,6 @@
 // these 2 lines of code are required to set up an express server
 const express = require('express');
+const PORT = process.env.PORT || 3001;
 const app = express();
 // requiring the data from /data/animals
 const { animals } = require('./data/animals');
@@ -64,6 +65,6 @@ app.get('/api/animals', (req, res) => {
 
 
 // you must always have express "listen" for requests for it to run
-app.listen(3001, () => {
-    console.log(`API server now on port 3001!`);
-});
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
+  });
